@@ -1,14 +1,14 @@
 use crate::parsed_argument::ParsedArg;
-// ge
+
 pub fn compute(parsed_arg: ParsedArg) -> f64 {
     if parsed_arg.operator == "+" {
-        return parsed_arg.num1 + parsed_arg.num2;
+        parsed_arg.num1 + parsed_arg.num2
     } else if parsed_arg.operator == "-" {
-        return parsed_arg.num1 - parsed_arg.num2;
+        parsed_arg.num1 - parsed_arg.num2
     } else if parsed_arg.operator == "*" {
-        return parsed_arg.num1 * parsed_arg.num2;
+        parsed_arg.num1 * parsed_arg.num2
     } else if parsed_arg.operator == "/" {
-        return parsed_arg.num1 / parsed_arg.num2;
+        parsed_arg.num1 / parsed_arg.num2
     } else if parsed_arg.operator == "^" {
         let mut i = 0;
         let mut product = parsed_arg.num1;
@@ -16,10 +16,10 @@ pub fn compute(parsed_arg: ParsedArg) -> f64 {
             return 1.0;
         }
         while i + 1 < parsed_arg.num2.round() as isize {
-            product = product * parsed_arg.num1;
+            product *= parsed_arg.num1;
             i += 1;
         }
-        return product;
+        product
     } else {
         panic!("invalid operation!");
     }

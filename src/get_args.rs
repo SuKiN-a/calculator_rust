@@ -1,6 +1,6 @@
 use std::env;
 
-fn arg_parse(to_parse: &Vec<String>, value: usize) -> f64 {
+fn arg_parse(to_parse: &[String], value: usize) -> f64 {
     to_parse.get(value).unwrap().parse::<f64>().unwrap()
 }
 
